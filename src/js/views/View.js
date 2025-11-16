@@ -14,7 +14,7 @@ export default class View {
   renderSpinner() {
     const markup = `
          <div class="spinner">
-            <img src="src/assets/img/loader.svg" alt="spinner" />
+            <img src="/loader.svg" alt="spinner" />
         </div>`;
 
     this._clear();

@@ -1,4 +1,5 @@
 import { PERSON_BASE_URL, IMAGE_BASE_URL } from "../config";
+import placeholder from "../../assets/img/no-poster.jpg";
 import View from "./View";
 
 class MovieView extends View {
@@ -42,7 +43,7 @@ class MovieView extends View {
               src="${
                 this._data.posterPath
                   ? IMAGE_BASE_URL + this._data.posterPath
-                  : "src/assets/img/no-poster.jpg"
+                  : `${placeholder}`
               }"
               alt="${this._data.title.slice(0, 10)}"
             />
