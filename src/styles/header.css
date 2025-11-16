@@ -1,0 +1,126 @@
+.header {
+  container-type: inline-size;
+  --logo-width: 80px;
+
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(var(--logo-width), 0.5fr) 2fr minmax(
+      80px,
+      0.5fr
+    );
+  align-items: center;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background: var(--bg-color-1);
+
+  @media only screen and (max-width: 600px) {
+    .logo {
+      display: none;
+    }
+    .form-search {
+      margin-inline-start: 1rem;
+      grid-column: 1 / 3;
+    }
+    .nav .nav__item .nav__btn {
+      padding-block: 0.6rem;
+      padding-inline: 0;
+    }
+  }
+
+  .logo {
+    width: clamp(2.5rem, 8cqi, 5rem);
+  }
+  .form-search {
+    width: 100%;
+    position: relative;
+    transition: transform 0.4s ease;
+
+    &:focus-within {
+      transform: translateY(-3px);
+    }
+
+    .form-search__input {
+      font-size: clamp(0.5rem, 2cqi, 1rem);
+      width: 100%;
+      height: clamp(1.5rem, 4cqi, 3rem);
+      background: white;
+      border: none;
+      outline: transparent;
+      padding-inline: 1rem;
+      border-radius: 20px;
+    }
+    .form-search__btn {
+      font-size: clamp(0.7rem, 2cqi, 1.2rem);
+      background: var(--color-1);
+      position: absolute;
+      inset-inline-end: 0;
+      inset-block-end: 0;
+      height: clamp(1.5rem, 4cqi, 3rem);
+      padding-inline: 1.5rem;
+      border-radius: 20px;
+      border: none;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+  }
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    .nav__list {
+      list-style: none;
+      display: flex;
+    }
+    .nav__item {
+      position: relative;
+    }
+    .nav__btn {
+      font-family: inherit;
+      height: 100%;
+      text-transform: uppercase;
+      font-size: clamp(0.6rem, 2vw, 0.9rem);
+      font-weight: 500;
+      padding-inline: 1.3rem;
+      border: none;
+      border-radius: 10px;
+      background-color: inherit;
+      transition: background-color 0.4s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: hsl(from var(--bg-color-1) h s calc(l - 2));
+      }
+    }
+
+    .nav__btn--watchlist:hover + .watchlist {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+/* WATCHLIST */
+.watchlist {
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  width: clamp(11rem, 31cqi, 25rem);
+  background-color: var(--bg-color-white);
+
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s 0.1s;
+
+  &:hover {
+    visibility: visible;
+    opacity: 1;
+  }
+}

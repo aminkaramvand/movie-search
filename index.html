@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Movie Search</title>
+    <script type="module" src="src/js/controller.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <img class="logo" src="src/assets/img/logo.svg" alt="" />
+      <form class="form-search" action="#">
+        <input
+          class="form-search__input"
+          type="text"
+          placeholder="Search for recipe"
+        />
+        <button class="form-search__btn">Search</button>
+      </form>
+      <nav class="nav">
+        <ul class="nav__list">
+          <!-- <li class="nav__item">
+            <button class="nav__btn nav__btn--movie-add">Add Movie</button>
+          </li> -->
+          <li class="nav__item">
+            <button class="nav__btn nav__btn--watchlist">Wathclist</button>
+            <div class="watchlist">
+              <ul class="watchlist__list results watchlist__results">
+                <div class="message">
+                  <p>
+                    ☹ No watchlist yet. Find a nice movie and bookmark it :)
+                  </p>
+                </div>
+                <!-- <li class="result">
+                  <a href="#id">
+                    <img
+                      class="result__img"
+                      src="https://image.tmdb.org/t/p/w200/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg"
+                      alt="movie poster"
+                    />
+                    <h3 class="result__title">title</h3>
+                    <div class="result__details">
+                      <p class="result__vote">8.32⭐(2000 votes)</p>
+                      <p class="result__release">2010.12.12</p>
+                      <p class="result__adult">adult: <span>yes</span></p>
+                    </div>
+                  </a>
+                </li> -->
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="results-container">
+        <ul class="results search__results">
+          <!-- <li class="result">
+            <a href="#id">
+              <img
+                class="result__img"
+                src="https://image.tmdb.org/t/p/w200/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg"
+                alt="movie poster"
+              />
+              <h3 class="result__title">title</h3>
+              <div class="result__details">
+                <p class="result__vote">8.32⭐(2000 votes)</p>
+                <p class="result__release">2010.12.12</p>
+                <p class="result__adult">adult: <span>yes</span></p>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+        <div class="pagination">
+          <!-- <button class="pagination__btn pagination__btn--decrease">
+            ⬅ Page <span>1</span>
+          </button>
+          <button class="pagination__btn pagination__btn--increase">
+            Page <span>2</span> ➡
+          </button> -->
+        </div>
+      </div>
+      <div class="movie-container">
+        <p class="message">😉 Start by searching for a movie. Have fun!</p>
+
+        <!-- <div class="movie__info">
+          <h2 class="details__title">Incfassssep</h2>
+          <figure class="figure">
+            <img
+              src="https://image.tmdb.org/t/p/original/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg"
+              alt="Elephant at sunset"
+            />
+            <figcaption class="tagline">movie's tagline</figcaption>
+          </figure>
+          <div class="details">
+            <p class="details__genres">drama</p>
+            <p class="details__language">en</p>
+            <p class="details__runtime"></p>
+            <p class="details__vote">votes</p>
+            <p class="details__release">2024</p>
+            <p class="details__budget">18000$</p>
+            <p class="details__trailer">trailer ➡</p>
+          </div>
+        </div>
+        <div class="movie__overview">
+          <h4>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            quibusdam in quam aspernatur animi aut voluptatem a velit,
+            necessitatibus, consectetur aliquam consequuntur expedita. Facere,
+            et eum? Maxime excepturi cum fugit?
+          </h4>
+        </div>
+        <button class="add__btn">Add to watchlist</button> -->
+      </div>
+    </main>
+
+    <!-- <div class="spinner">
+      <img src="src/assets/img/loader.svg" alt="spinner" />
+    </div>-->
+
+    <div class="overlay hidden"></div>
+  </body>
+</html>

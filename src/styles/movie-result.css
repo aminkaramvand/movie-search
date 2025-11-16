@@ -1,0 +1,197 @@
+.movie-container {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 2.5cqi, 2rem);
+  background-color: var(--bg-color-light);
+  padding: clamp(0.4rem, 1.1cqi, 1rem);
+  border-radius: 10px;
+  @media only screen and (max-width: 450px) {
+    position: fixed;
+    inset: 0;
+    transform: translateY(120%);
+    height: 90vh;
+    width: 90vw;
+    overflow-y: scroll;
+    margin-inline: auto;
+    transition: transform 0.3s ease;
+
+    &.open {
+      z-index: 4;
+      transform: translateY(10%);
+    }
+  }
+  .close-modal__btn {
+    display: none;
+    transform: scale(1.1);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset-inline-end: 8px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background-color: hsl(from var(--color-dark) h s calc(l + 87));
+    cursor: pointer;
+    @media only screen and (max-width: 450px) {
+      display: flex;
+    }
+  }
+
+  .spinner {
+    margin: 1rem auto 0 auto;
+    width: 15%;
+
+    img {
+      width: 100%;
+    }
+  }
+  .add__btn {
+    font-size: clamp(0.55rem, 2cqi, 0.9rem);
+    padding: clamp(0.3rem, 1.2cqi, 0.8rem) clamp(0.6rem, 2.1cqi, 1.2rem);
+    border-radius: 20px;
+    border: none;
+    background-color: var(--bg-color-2);
+    cursor: pointer;
+    transition: transform 2s ease;
+
+    &:hover {
+      background-color: hsl(from var(--bg-color-2) h s calc(l - 5));
+    }
+    &:active {
+      transform: translateY(2rem);
+    }
+  }
+}
+
+.movie__info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(200px, 3fr) minmax(min-content, 1.2fr);
+  gap: 0.5rem clamp(0.3rem, 2cqi, 1rem);
+
+  .movie__title {
+    grid-column: span 2;
+    font-size: clamp(1rem, 4cqi, 2.5rem);
+  }
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    img {
+      object-fit: cover;
+      object-position: 0 40%;
+      width: 100%;
+      height: clamp(200px, 55cqi, 400px);
+      position: relative;
+    }
+    figcaption {
+      font-size: clamp(0.5rem, 2cqi, 1.1rem);
+      font-style: italic;
+      background-color: var(--color-3);
+      color: var(--bg-color-white);
+      padding: 3px;
+      text-align: center;
+    }
+
+    .figure__img--no-poster::after {
+      content: "No Poster Img";
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      inset-block-start: 50%;
+      inset-inline-start: 50%;
+      z-index: 100;
+    }
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5cqi;
+
+    p {
+      font-size: clamp(0.6rem, 2.2cqi, 1.1rem);
+      font-weight: 400;
+
+      span {
+        font-size: clamp(0.7rem, 2.4cqi, 1.2rem);
+        font-weight: 500;
+        color: var(--color-dark);
+      }
+    }
+    .details__trailer {
+      font-size: clamp(0.5rem, 2.1cqi, 1rem);
+      width: fit-content;
+      margin-inline: auto;
+      text-decoration: none;
+      color: inherit;
+      background-color: var(--color-4);
+      padding: 0.2rem clamp(0.3rem, 2cqi, 1rem);
+      border-radius: 10px;
+    }
+  }
+}
+
+.movie__overview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-inline: clamp(0.5rem, 3cqi, 2rem);
+
+  h4 {
+    font-size: clamp(0.8rem, 3cqi, 1.3rem);
+    font-weight: 500;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .movie__casts-container,
+  .movie__director-container {
+    span {
+      font-size: clamp(0.7rem, 3cqi, 1.2rem);
+      font-weight: 500;
+    }
+
+    p {
+      display: inline;
+      line-height: 2;
+
+      @container (max-width: 600px) {
+        line-height: 1.5;
+        a {
+          padding-inline: 0.1rem;
+        }
+      }
+      @container (max-width: 500px) {
+        line-height: 0.5;
+        a {
+          padding-inline: 0;
+        }
+      }
+      @container (max-width: 400px) {
+        display: inline-block;
+      }
+    }
+
+    a {
+      font-family: inherit;
+      font-size: clamp(0.7rem, 3cqi, 1.2rem);
+      text-decoration: none;
+      color: inherit;
+      line-height: 1.5;
+      padding-inline: 0.2rem;
+
+      &:hover {
+        background-color: hsl(from var(--bg-color-light) h s calc(l - 5));
+      }
+    }
+  }
+}
