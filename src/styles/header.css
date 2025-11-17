@@ -37,7 +37,7 @@
     transition: transform 0.4s ease;
 
     &:focus-within {
-      transform: translateY(-3px);
+      transform: translateY(-1.5px);
     }
 
     .form-search__input {
@@ -92,6 +92,7 @@
       border: none;
       border-radius: 10px;
       background-color: inherit;
+      outline-color: transparent;
       transition: background-color 0.4s ease;
       cursor: pointer;
 

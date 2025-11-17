@@ -13,11 +13,10 @@ const controlResults = async function () {
     const query = searchView.getQuery();
 
     searchView.clearInput();
+    paginationView.clear();
     if (!query) return resultsView.renderMessage("Input can't be empty! 😐");
 
     resultsView.renderSpinner();
-
-    paginationView.clear();
 
     await model.loadResults(query);
 
